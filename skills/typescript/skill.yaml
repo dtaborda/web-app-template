@@ -1,0 +1,35 @@
+name: typescript
+version: 1.0.0
+description: TypeScript conventions for the monorepo
+author: team@company.com
+
+capabilities:
+  - lint
+  - format
+  - type-check
+  - test
+  - build
+
+commands:
+  lint: eslint src/
+  format: prettier --write src/
+  type-check: tsc --noEmit
+  test: vitest run
+  build: tsc
+
+patterns:
+  - strict TypeScript configuration
+  - Functional programming preferred
+  - Explicit return types on public APIs
+  - No `any` types
+  - Use `unknown` for type assertions
+  - Prefer interfaces over type aliases for objects
+  - Use discriminated unions for state management
+
+conventions:
+  file_naming: kebab-case.ts
+  function_naming: camelCase
+  component_naming: PascalCase
+  constant_naming: UPPER_SNAKE_CASE
+  interface_naming: PascalCase with I prefix optional
+  type_naming: PascalCase with T prefix optional
