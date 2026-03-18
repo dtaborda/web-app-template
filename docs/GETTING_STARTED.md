@@ -132,12 +132,13 @@ To enable the chat feature:
 
 2. Copy the example environment file:
    ```bash
-   cp ui/.env.example ui/.env.local
+   cp .env.example .env.local
    ```
 
-3. Edit `ui/.env.local` and add your API key:
+3. Edit `.env.local` and uncomment the API key:
    ```bash
-   OPENAI_API_KEY=sk-your-actual-api-key-here
+   # Uncomment this line and add your key
+   # OPENAI_API_KEY=sk-your-actual-api-key-here
    ```
 
 3. Customize the AI agent in `packages/ai/src/agent.ts`:
@@ -400,20 +401,17 @@ Example workflow:
 
 ## Environment Variables
 
-Create `ui/.env.local` for local development:
+Create `.env.local` in the root for local development:
 
 ```bash
-# AI SDK (Optional)
-OPENAI_API_KEY=your_key
+# Copy the example file
+cp .env.example .env.local
 
-# App Config
-NEXT_PUBLIC_APP_ENV=development
-
-# API URLs
-NEXT_PUBLIC_API_URL=http://localhost:3000
+# Uncomment and add your values
+# OPENAI_API_KEY=sk-your-key-here
+# NEXT_PUBLIC_APP_ENV=development
 ```
 
-**Rules:**
 - Never commit `.env.local`
 - Use `NEXT_PUBLIC_` for client-accessible vars
 - Keep secrets server-side only

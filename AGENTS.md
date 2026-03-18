@@ -439,14 +439,15 @@ If you see a message about compaction or context reset:
 
 ## Environment Variables
 
-Create `ui/.env.local`:
+Create `.env.local` in the root:
 
 ```bash
-# AI SDK Configuration (optional - for chat features)
-OPENAI_API_KEY=your_openai_api_key
+# Copy the example file
+cp .env.example .env.local
 
-# App Configuration
-NEXT_PUBLIC_APP_ENV=development
+# Uncomment and add your values
+# OPENAI_API_KEY=sk-your-openai-api-key-here
+# NEXT_PUBLIC_APP_ENV=development
 ```
 
 **Security Rules:**
@@ -481,7 +482,7 @@ pnpm test          # Should pass (if tests exist)
 1. **Update branding**: Edit `ui/app/layout.tsx` metadata
 2. **Modify theme**: Edit `ui/styles/globals.css` color tokens
 3. **Add features**: Follow patterns in `ui/AGENTS.md` and package-specific guides
-4. **Configure AI**: Add OpenAI API key to `ui/.env.local` for chat features
+4. **Configure AI**: Add OpenAI API key to `.env.local` for chat features
 
 ### 4. Development Workflow
 

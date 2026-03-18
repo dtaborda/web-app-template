@@ -161,10 +161,10 @@ To enable chat, copy the example environment file and add your API key:
 
 ```bash
 # Copy the example file
-cp ui/.env.example ui/.env.local
+cp .env.example .env.local
 
-# Edit ui/.env.local and add your OpenAI API key
-OPENAI_API_KEY=sk-your-actual-api-key-here
+# Edit .env.local and uncomment OPENAI_API_KEY
+# OPENAI_API_KEY=sk-your-actual-api-key-here
 ```
 
 ### 3. Shared Component Library
@@ -191,9 +191,9 @@ The template uses environment variables for configuration. All optional features
 
 ```bash
 # Copy the example environment file
-cp ui/.env.example ui/.env.local
+cp .env.example .env.local
 
-# Edit ui/.env.local with your values
+# Edit .env.local with your values
 ```
 
 ### Required Variables
@@ -208,7 +208,7 @@ cp ui/.env.example ui/.env.local
 | `NEXT_PUBLIC_APP_URL` | Application base URL | Your domain or `http://localhost:3000` |
 | `NEXT_PUBLIC_APP_ENV` | Environment name | `development`, `staging`, `production` |
 
-See `ui/.env.example` for a complete list of available variables including:
+See `.env.example` for a complete list of available variables.
 - Alternative AI providers (Anthropic, Google, Cohere)
 - Analytics (Google Analytics, PostHog)
 - Database (PostgreSQL, Supabase)
@@ -355,14 +355,15 @@ cd ui
 
 ## Environment Variables
 
-Create `ui/.env.local`:
+Create `.env.local` in the root:
 
 ```bash
-# AI SDK (Optional - for chat features)
-OPENAI_API_KEY=your_openai_api_key
+# Copy the example file
+cp .env.example .env.local
 
-# App Configuration
-NEXT_PUBLIC_APP_ENV=development
+# Uncomment and add your values
+# OPENAI_API_KEY=sk-your-openai-api-key-here
+# NEXT_PUBLIC_APP_ENV=development
 ```
 
 **Never commit `.env.local` to version control.**
