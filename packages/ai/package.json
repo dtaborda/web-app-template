@@ -10,7 +10,8 @@
     "clean": "rm -rf .turbo node_modules"
   },
   "dependencies": {
-    "ai": "^4.0.0",
+    "@ai-sdk/openai": "^3.0.41",
+    "ai": "^6.0.116",
     "zod": "^3.23.8"
   },
   "devDependencies": {

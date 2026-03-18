@@ -17,4 +17,5 @@ export const defaultChatOptions: ChatOptions = {
  * System prompt for the default chat agent.
  * Customize this based on your application needs.
  */
-export const defaultSystemPrompt = `You are a helpful assistant. Be concise and clear in your responses.`
+export const defaultSystemPrompt =
+  'You are a helpful assistant. Be concise and clear in your responses.'

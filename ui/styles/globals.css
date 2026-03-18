@@ -1,55 +1,78 @@
 @import "tailwindcss";
 
-@layer base {
-  :root {
-    --background: 0 0% 100%;
-    --foreground: 240 10% 3.9%;
-    --card: 0 0% 100%;
-    --card-foreground: 240 10% 3.9%;
-    --primary: 240 5.9% 10%;
-    --primary-foreground: 0 0% 98%;
-    --secondary: 240 4.8% 95.9%;
-    --secondary-foreground: 240 5.9% 10%;
-    --muted: 240 4.8% 95.9%;
-    --muted-foreground: 240 3.8% 46.1%;
-    --accent: 240 4.8% 95.9%;
-    --accent-foreground: 240 5.9% 10%;
-    --destructive: 0 84.2% 60.2%;
-    --destructive-foreground: 0 0% 98%;
-    --border: 240 5.9% 90%;
-    --input: 240 5.9% 90%;
-    --ring: 240 5.9% 10%;
-    --radius: 0.5rem;
-  }
+/* ═══════════════════════════════════════════
+   dTaborda — Template for scalable web apps
+   Premium dark-mode minimalist experience
+   ═══════════════════════════════════════════ */
 
-  .dark {
-    --background: 240 10% 3.9%;
-    --foreground: 0 0% 98%;
-    --card: 240 10% 3.9%;
-    --card-foreground: 0 0% 98%;
-    --primary: 0 0% 98%;
-    --primary-foreground: 240 5.9% 10%;
-    --secondary: 240 3.7% 15.9%;
-    --secondary-foreground: 0 0% 98%;
-    --muted: 240 3.7% 15.9%;
-    --muted-foreground: 240 5% 64.9%;
-    --accent: 240 3.7% 15.9%;
-    --accent-foreground: 0 0% 98%;
-    --destructive: 0 62.8% 30.6%;
-    --destructive-foreground: 0 0% 98%;
-    --border: 240 3.7% 15.9%;
-    --input: 240 3.7% 15.9%;
-    --ring: 240 4.9% 83.9%;
-  }
+@theme {
+  /* Background hierarchy */
+  --color-bg-base: #050508;
+  --color-bg-surface: #0a0a0f;
+  --color-bg-elevated: #14141f;
+  --color-bg-overlay: rgba(5, 5, 8, 0.85);
+
+  /* Border hierarchy */
+  --color-border-default: #1e1e2e;
+  --color-border-subtle: #14141f;
+  --color-border-strong: #2a2a3a;
+
+  /* Text hierarchy */
+  --color-text-primary: #f0f0f5;
+  --color-text-secondary: #8888aa;
+  --color-text-muted: #555577;
+  --color-text-ghost: #333355;
+
+  /* Accent — Cyan (primary brand) */
+  --color-accent-cyan: #00f0ff;
+  --color-accent-cyan-dim: rgba(0, 240, 255, 0.08);
+  --color-accent-cyan-glow: rgba(0, 240, 255, 0.3);
+
+  /* Accent — Hot (secondary brand) */
+  --color-accent-hot: #ff3366;
+  --color-accent-hot-dim: rgba(255, 51, 102, 0.15);
+
+  /* Typography */
+  --font-display: "Inter", system-ui, -apple-system, sans-serif;
+  --font-body: "Inter", system-ui, -apple-system, sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, monospace;
+
+  /* Animation */
+  --ease-out-expo: cubic-bezier(0.16, 1, 0.3, 1);
+  --duration-fast: 150ms;
+  --duration-normal: 300ms;
 }
 
-@layer base {
-  * {
-    border-color: hsl(var(--border));
-  }
-  
-  body {
-    background-color: hsl(var(--background));
-    color: hsl(var(--foreground));
-  }
+html {
+  background-color: var(--color-bg-base);
+  color: var(--color-text-primary);
+  font-family: var(--font-body);
+  -webkit-font-smoothing: antialiased;
+}
+
+body {
+  background-color: var(--color-bg-base);
+  min-height: 100vh;
+}
+
+/* Map to shadcn variables */
+:root {
+  --background: 240 10% 3%;
+  --foreground: 240 5% 94%;
+  --card: 240 10% 6%;
+  --card-foreground: 240 5% 94%;
+  --primary: 180 100% 50%;
+  --primary-foreground: 240 10% 3%;
+  --secondary: 240 4% 12%;
+  --secondary-foreground: 240 5% 94%;
+  --muted: 240 4% 12%;
+  --muted-foreground: 240 5% 60%;
+  --accent: 180 100% 50%;
+  --accent-foreground: 240 10% 3%;
+  --destructive: 0 84% 60%;
+  --destructive-foreground: 0 0% 98%;
+  --border: 240 6% 18%;
+  --input: 240 6% 18%;
+  --ring: 180 100% 50%;
+  --radius: 0.5rem;
 }

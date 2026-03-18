@@ -13,10 +13,11 @@
     "clean": "rm -rf .next .turbo node_modules"
   },
   "dependencies": {
+    "@ai-sdk/openai": "^3.0.41",
     "@template/ai": "workspace:*",
     "@template/core": "workspace:*",
     "@template/ui": "workspace:*",
-    "ai": "^4.0.0",
+    "ai": "^6.0.116",
     "next": "^15.1.4",
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
