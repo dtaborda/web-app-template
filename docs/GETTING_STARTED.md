@@ -130,9 +130,14 @@ To enable the chat feature:
 
 1. Get an OpenAI API key from [platform.openai.com](https://platform.openai.com)
 
-2. Create `ui/.env.local`:
+2. Copy the example environment file:
    ```bash
-   OPENAI_API_KEY=sk-your-key-here
+   cp ui/.env.example ui/.env.local
+   ```
+
+3. Edit `ui/.env.local` and add your API key:
+   ```bash
+   OPENAI_API_KEY=sk-your-actual-api-key-here
    ```
 
 3. Customize the AI agent in `packages/ai/src/agent.ts`:

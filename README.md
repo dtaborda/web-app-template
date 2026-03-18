@@ -157,10 +157,14 @@ Full chat implementation with streaming support:
 - API route with AI SDK 5
 - Configurable LLM provider (OpenAI by default)
 
-To enable chat, add your API key to `ui/.env.local`:
+To enable chat, copy the example environment file and add your API key:
 
 ```bash
-OPENAI_API_KEY=your_key_here
+# Copy the example file
+cp ui/.env.example ui/.env.local
+
+# Edit ui/.env.local and add your OpenAI API key
+OPENAI_API_KEY=sk-your-actual-api-key-here
 ```
 
 ### 3. Shared Component Library
@@ -178,6 +182,47 @@ function MyFeature() {
   )
 }
 ```
+
+## Environment Variables
+
+The template uses environment variables for configuration. All optional features are disabled by default.
+
+### Setup
+
+```bash
+# Copy the example environment file
+cp ui/.env.example ui/.env.local
+
+# Edit ui/.env.local with your values
+```
+
+### Required Variables
+
+**None** - The template works out of the box without any environment variables.
+
+### Optional Variables
+
+| Variable | Purpose | Get It From |
+|----------|---------|-------------|
+| `OPENAI_API_KEY` | Enable AI chat features | [platform.openai.com](https://platform.openai.com/api-keys) |
+| `NEXT_PUBLIC_APP_URL` | Application base URL | Your domain or `http://localhost:3000` |
+| `NEXT_PUBLIC_APP_ENV` | Environment name | `development`, `staging`, `production` |
+
+See `ui/.env.example` for a complete list of available variables including:
+- Alternative AI providers (Anthropic, Google, Cohere)
+- Analytics (Google Analytics, PostHog)
+- Database (PostgreSQL, Supabase)
+- Authentication (NextAuth, OAuth)
+- Email (Resend, SendGrid)
+- File storage (AWS S3, Cloudinary)
+- Error tracking (Sentry)
+
+### Security Rules
+
+- ✅ Use `NEXT_PUBLIC_` prefix for client-side variables
+- ❌ NEVER commit `.env.local` (already in `.gitignore`)
+- ❌ NEVER expose API keys client-side (no `NEXT_PUBLIC_` for secrets)
+- ✅ Set production variables in your hosting platform (Vercel, etc.)
 
 ## Development Workflow
 
@@ -197,9 +242,6 @@ pnpm format           # Format code with Biome
 
 # Testing
 pnpm test             # Run all tests
-
-# Clean
-pnpm clean            # Remove build artifacts
 ```
 
 ### Adding a New Package
